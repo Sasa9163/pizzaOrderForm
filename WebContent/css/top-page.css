@@ -1,0 +1,43 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    color:white;
+}
+
+.frame{
+    height: 100%;
+    background-image: url("../img/top-img.jpg");
+    background-size:cover;
+    background-position: center center;
+    position: relative;
+}
+
+.frame::before {
+  content: '';
+  background-color: rgba(0,0,0,.5);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.content{
+    height:100%;
+}
+
+h1{
+    font-size:2em;
+}
+
+/*-------------PCのスタイル--------------------*/
+@media (min-width: 415px){
+	.content {
+		max-width:640px;
+        margin:auto;
+	}
+}
