@@ -3,3 +3,4 @@ build
 WebContent/js/firebase.js
 *.env
 *.properties
+srctest
