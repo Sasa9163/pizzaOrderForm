@@ -1,3 +1,5 @@
-.setting
+.settings
 build
 WebContent/js/firebase.js
+*.env
+*.properties

@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,7 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import pizzaOrderForm.dbConn.DBconn;
 import pizzaOrderForm.userData.UserData;
 
 @WebServlet({"/deleteOrderHistory"})
@@ -23,11 +23,11 @@ public class deleteOrderHistoryServlet extends HttpServlet{
 	protected Connection conn=null;
 
 	public void init() throws ServletException{
-		DBconn data=new DBconn();
-		String servername = data.servername;
-		String databasename = data.databasename;
-		String user = data.user;
-		String password = data.password;
+		ResourceBundle rb=ResourceBundle.getBundle("dbset");
+		String servername = rb.getString("server");
+		String databasename = rb.getString("db");
+		String user = rb.getString("user");;
+		String password = rb.getString("password");
 
 		String url = "jdbc:mysql://" + servername + "/" + databasename;
 

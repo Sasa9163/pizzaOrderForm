@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,18 +16,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import pizzaOrderForm.dbConn.DBconn;
 import pizzaOrderForm.userData.UserData;
 @WebServlet({"/Login"})
 public class LoginServlet extends HttpServlet{
 	protected Connection conn=null;
 
 	public void init() throws ServletException{
-		DBconn data=new DBconn();
-		String servername = data.servername;
-		String databasename = data.databasename;
-		String user = data.user;
-		String password = data.password;
+		ResourceBundle rb=ResourceBundle.getBundle("dbset");
+		String servername = rb.getString("server");
+		String databasename = rb.getString("db");
+		String user = rb.getString("user");;
+		String password = rb.getString("password");
 
 		String url = "jdbc:mysql://" + servername + "/" + databasename;
 
