@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="pizzaOrderForm.servlet.*"%>
 <%@ page import="pizzaOrderForm.itemInfo.*"%>
 <%@ page import="java.sql.*" %>
 
@@ -10,7 +11,6 @@
 String sqlStr = "SELECT * FROM SasaItemTable";
 PreparedStatement st = connect.prepareStatement(sqlStr);
 ResultSet result = st.executeQuery();
-
 %>
 <%
 	int count=0;

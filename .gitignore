@@ -1,10 +1,11 @@
 .settings
+.tmp.drivedownload
 build
 WebContent/js/firebase.js
+.classpath
+.project
 <<<<<<< HEAD
-*.env
 *.properties
 srctest
 =======
-.tmp.drivedownload
 >>>>>>> branch 'master' of https://github.com/Sasa9163/pizzaOrderForm.git
